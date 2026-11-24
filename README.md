@@ -12,6 +12,14 @@ bun run test       # acceptance tests from the spec
 bun run build      # type-check and production build into dist/
 ```
 
+## End-to-end tests and Playwright agents
+
+```bash
+bun run test:e2e   # Playwright, desktop and phone sizes; starts the dev server itself
+```
+
+`.mcp.json` registers two MCP servers: `playwright` (browser control) and `playwright-test` (used by the agents). The planner, generator and healer agents in `.claude/agents/` write plans to `specs/` and tests to `tests/`, each starting from `seed.spec.ts`. The `playwright-cli` skill is in `.claude/skills/`. Claude Code asks you to approve the project MCP servers the first time you open the repo.
+
 ## What the MVP covers
 
 | Spec feature | Where |
